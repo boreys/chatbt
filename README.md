@@ -4,11 +4,11 @@ ChatBT - Custom AI Chatbot to help you with customer service and automating supp
 ### Run in Production
 Build Next.js for production with command:
 ```
-npm build
+npm run build
 ```
 Run the production app:
 ```
-npm start
+npm run start
 ```
 
 ### Setup PM2 process manager
@@ -18,11 +18,11 @@ sudo npm install -g pm2
 ```
 Navigate to the Next.js application directory (eg: /var/www/chagpt)
 ```
-cd /var/www/chagpt
+cd /var/www/chatbt
 ```
 Start the Next.js app using pm2:
 ```
-sudo -u nodejs pm2 start npm --name "chagpt" -- start
+sudo -u nodejs pm2 start npm --name "chatbt" -- start
 ```
 The command above should start the app already. To ensure it starts on boot, run:
 ```

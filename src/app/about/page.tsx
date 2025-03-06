@@ -1,11 +1,5 @@
 'use client'
 
-import { ArrowRight, CheckCircle, Mail, MapPin, Phone } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { useEffect } from "react"
-import Script from "next/script"
-
 export default function LandingPage() {
   return (
       <main className="flex-grow-1">

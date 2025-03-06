@@ -1,11 +1,7 @@
 'use client'
 
-import { ArrowRight, CheckCircle, Mail, MapPin, Phone, CalendarCheck2, UserCheck } from "lucide-react"
+import { ArrowRight, CheckCircle, CalendarCheck2, UserCheck } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
-import { useEffect } from "react"
-import Script from "next/script"
-import Header from './header'
 
 export default function LandingPage() {
   return (
