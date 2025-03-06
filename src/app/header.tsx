@@ -5,7 +5,7 @@ export default function Header(){
           <nav className="navbar navbar-expand-md sticky-top border-bottom bg-body-tertiary">
             <div className="container">
               <Link className="navbar-brand" href="/">
-                ChaGPT
+                ChatBT
               </Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

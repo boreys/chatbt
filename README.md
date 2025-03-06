@@ -20,9 +20,9 @@ Navigate to the Next.js application directory (eg: /var/www/chagpt)
 ```
 cd /var/www/chatbt
 ```
-Start the Next.js app using pm2:
+Start the Next.js app using pm2 on port 5000:
 ```
-sudo -u nodejs pm2 start npm --name "chatbt" -- start
+sudo -u nodejs pm2 start npm --name "chatbt" -- start -- -p 5000
 ```
 The command above should start the app already. To ensure it starts on boot, run:
 ```
