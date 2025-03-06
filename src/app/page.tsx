@@ -1,101 +1,163 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { ArrowRight, CheckCircle, Mail, MapPin, Phone, CalendarCheck2, UserCheck } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect } from "react"
+import Script from "next/script"
+import Header from './header'
+
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="flex-grow-1">
+      <section className="py-5 py-md-7">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <h1 className="display-4 fw-bold mb-3">Enhanced Customer Service through Personalized AI Chatbots</h1>
+              <p className="lead mb-4">Build custom AI Chatbot to help your support team provide better customer service</p>
+              <div className="d-flex flex-column flex-sm-row gap-2">
+                <a href="https://mybot.chat/?src=chatbt" className="btn btn-primary" role="button">
+                  Get Started
+                  <ArrowRight className="ms-2" size={16} />
+                </a>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <Image
+                src="/img/chat-ui-desktop.jpg"
+                alt="Chatbot UI"
+                width={550}
+                height={550}
+                className="img-fluid rounded"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      <section id="features" className="py-5">
+        <div className="container">
+          <h2 className="text-center mb-5">Features</h2>
+          <div className="row">
+            <div className="col-md-4 mb-4 mb-md-0">
+              <div className="text-center">
+                <div className="bg-secondary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "64px", height: "64px" }}>
+                  <CheckCircle size={32} />
+                </div>
+                <h3 className="h4 mb-3">No-code Chatbot Builder</h3>
+                <p className="text-start">Build AI Chatbot without writing code. Anyone can do it in minutes.</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4 mb-md-0">
+              <div className="text-center">
+                <div className="bg-secondary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "64px", height: "64px" }}>
+                  <UserCheck size={32} />
+                </div>
+                <h3 className="h4 mb-3">Customer Service</h3>
+                <p className="tex-start">Use AI Chatbot to help your customer service team improve customer satisfaction for your business</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="text-center">
+                <div className="bg-secondary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: "64px", height: "64px" }}>
+                  <CalendarCheck2 size={32} />
+                </div>
+                <h3 className="h4 mb-3">Collect Feedback</h3>
+                <p className="text-start">Get user feedback with contact information captured by AI Chatbot.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" className="py-5">
+        <div className="container">
+          <h2 className="text-center mb-5">Benefits For Business</h2>
+          <div className="row">
+            <div className="col-sm-12 col-md-6">
+              <img src="/img/benefit-support.jpeg" alt="benefit on customer service" className="rounded mx-auto d-block img-fluid" />
+            </div>
+            <div className="col-sm-12 col-md-6 text-center">
+              <h2>Improve Customer Support</h2>
+              <p className="text-start">
+              AI Chatbot can answer customer's questions instantly, anytime, reducing wait times and frustration. This frees up human agents to tackle more intricate issues that require a personal touch.
+              </p>
+            </div>
+          </div>
+          <div className="row py-4">
+            <div className="col-sm-12 col-md-6 text-center">
+              <h2>Lead Generation</h2>
+              <p className="text-start">
+              AI Chatbot can engage website visitors in real-time and qualify leads by asking strategic questions. This allows businesses to identify potential customers early on and nurture them through the sales funnel.
+              </p>
+            </div>
+            <div className="col-sm-12 col-md-6">
+              <img src="/img/benefit-lead-generation.png" alt="benefit on customer service" className="rounded mx-auto d-block img-fluid" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="py-5">
+        <div className="container">
+          <h2 className="text-center mb-5">Testimonials</h2>
+          <div className="row">
+            <div className="col-md-4 mb-4 mb-md-0">
+              <div className="text-center">
+                <Image
+                  src="/img/testimonials-4.jpg"
+                  alt="Alice Johnson"
+                  width={100}
+                  height={100}
+                  className="rounded-circle mb-3"
+                />
+                <h3 className="h5 mb-1">Alice Johnson</h3>
+                <p className="mb-3">CEO, TechCorp</p>
+                <p className="text-start">"MyBot.Chat's AI took my website from crickets to conversations! 24/7 support & happy customers."</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4 mb-md-0">
+              <div className="text-center">
+                <Image
+                  src="/img/testimonials-2.jpg"
+                  alt="Bob Smith"
+                  width={100}
+                  height={100}
+                  className="rounded-circle mb-3"
+                />
+                <h3 className="h5 mb-1">Bob Smith</h3>
+                <p className="mb-3">CTO, InnovateCo</p>
+                <p className="text-start">"AI is a lifesaver! Answers customer questions 24/7 & frees me up for tougher tasks. Love the easy setup - no coding needed!"</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="text-center">
+                <Image
+                  src="/img/testimonials-3.jpg"
+                  alt="Carol Davis"
+                  width={100}
+                  height={100}
+                  className="rounded-circle mb-3"
+                />
+                <h3 className="h5 mb-1">Carol Davis</h3>
+                <p className="mb-3">Lead Developer, WebSolutions</p>
+                <p className="text-start">"MyBot.Chat's AI saved my team hours! It answers customer questions & frees us for complex issues. Night & day support, a lifesaver!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-5">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-6">
+              <a href="https://mybot.chat/?src=chatbt" type="button" className="btn btn-primary w-100">Get Started Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
 }
